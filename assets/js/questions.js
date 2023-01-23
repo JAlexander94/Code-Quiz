@@ -5,16 +5,19 @@ let allanswersarr = [["strings","booleans","alerts","numbers"],["quotes","curly 
 
 let startscreen = document.getElementById("start-screen")
 let questions = document.getElementById("questions")
+let endscreen = document.getElementById("end-screen")
 let questiontitle = document.getElementById("question-title")
 let choices = document.getElementById("choices")
+let finalscore = document.getElementById("final-score")
 
-let numquestions = 0
+var numquestions = 0
 let timer = 100
+console.log(numquestions)
 
-function firstquestion(event){
+function firstquestion(){
     startscreen.setAttribute("class","hide")
     questions.setAttribute("class","visible")
-    questiontitle.textContent = questionsarr[numquestions]
+    questiontitle.innerHTML = questionsarr[numquestions]
     const questionsshell = document.createElement("ol")
     for (i=0;i<4;i++){
         const button = document.createElement("button")
@@ -24,6 +27,24 @@ function firstquestion(event){
     }
     choices.appendChild(questionsshell)
     numquestions++
+    console.log(typeof numquestions)
+    questions.addEventListener("click",function(event){
+        const isButton = event.target.nodeName === "BUTTON"
+        if(!isButton){return}
+        console.log(numquestions)
+            if(numquestions === 5 ){
+                questions.setAttribute("class","hide")
+                endscreen.setAttribute("class","visible")
+            }else{            
+                questiontitle.textContent = questionsarr[numquestions]
+                for (i=0;i<4;i++){
+                const button = document.getElementById(i)
+                button.textContent = (i+1)+". "+allanswersarr[numquestions][i]
+                }
+            }
+        numquestions++
+        console.log(numquestions)
+})
 }
 
 document.getElementById("start").onclick = function(){firstquestion()}
