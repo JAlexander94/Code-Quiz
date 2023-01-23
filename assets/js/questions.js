@@ -9,14 +9,15 @@ let endscreen = document.getElementById("end-screen")
 let questiontitle = document.getElementById("question-title")
 let choices = document.getElementById("choices")
 let finalscore = document.getElementById("final-score")
+let time = document.getElementById("time")
 
 var numquestions = 0
-let timer = 100
-console.log(numquestions)
 
 function firstquestion(){
     startscreen.setAttribute("class","hide")
     questions.setAttribute("class","visible")
+    secondsLeft = 100
+    setTime()
     questiontitle.innerHTML = questionsarr[numquestions]
     const questionsshell = document.createElement("ol")
     for (i=0;i<4;i++){
@@ -27,7 +28,6 @@ function firstquestion(){
     }
     choices.appendChild(questionsshell)
     numquestions++
-    console.log(typeof numquestions)
     questions.addEventListener("click",function(event){
         const isButton = event.target.nodeName === "BUTTON"
         if(!isButton){return}
@@ -43,8 +43,19 @@ function firstquestion(){
                 }
             }
         numquestions++
-        console.log(numquestions)
 })
+}
+
+function setTime(){
+    var timerInterval = setInterval(function(){
+        secondsLeft--
+        time.textContent = secondsLeft
+        if(secondsLeft === 0){
+            clearInterval(timerInterval)
+            questions.setAttribute("class","hide")
+            endscreen.setAttribute("class","visible")
+        }
+    },1000)
 }
 
 document.getElementById("start").onclick = function(){firstquestion()}
