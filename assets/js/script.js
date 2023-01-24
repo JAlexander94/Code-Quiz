@@ -9,11 +9,24 @@ let endscreen = document.getElementById("end-screen")
 let questiontitle = document.getElementById("question-title")
 let choices = document.getElementById("choices")
 let finalscore = document.getElementById("final-score")
+let highscorespage= document.getElementById("high-scores")
 let time = document.getElementById("time")
 let initials
 
 var numquestions = 0
 var highscores = []
+
+function init(){
+    startscreen.setAttribute("class","start")
+    questions.setAttribute("class","hide")
+    endscreen.setAttribute("class","hide")
+    time.textContent = 0
+    numquestions = 0
+    var buttons = document.querySelectorAll(".button")
+    if(buttons){for (var i = 0;i<buttons.length;i++){buttons[i].remove()}}
+    console.log(numquestions)
+}
+
 
 function firstquestion(){
     startscreen.setAttribute("class","hide")
@@ -21,20 +34,21 @@ function firstquestion(){
     secondsLeft = 100
     setTime()
     questiontitle.innerHTML = questionsarr[numquestions]
-    const questionsshell = document.createElement("ol")
     for (i=0;i<4;i++){
         const button = document.createElement("button")
+        button.setAttribute("class","button")
         button.setAttribute("id",i)
         button.textContent = (i+1)+". "+allanswersarr[numquestions][i]
-        questionsshell.appendChild(button)
+        choices.appendChild(button)
     }
-    choices.appendChild(questionsshell)
     numquestions++
     questions.addEventListener("click",function(event){newquestion(event)})
 }
 
 
 function newquestion(event){
+    event.stopPropagation()
+    event.preventDefault()
     const isButton = event.target.nodeName === "BUTTON"
     if(!isButton){return}
     const answer = event.target.textContent
@@ -43,6 +57,8 @@ function newquestion(event){
             finalscore.textContent = secondsLeft
             questions.setAttribute("class","hide")
             endscreen.setAttribute("class","visible")
+            time.textContent = secondsLeft
+            return
         }else{        
             questiontitle.textContent = questionsarr[numquestions]
             for (i=0;i<4;i++){
@@ -51,6 +67,7 @@ function newquestion(event){
             }
         }
     numquestions++
+    console.log(numquestions)
 }
 
 
@@ -63,6 +80,9 @@ function setTime(){
             questions.setAttribute("class","hide")
             endscreen.setAttribute("class","visible")
         }
+        if(numquestions===5){
+            clearInterval(timerInterval)
+            return}
     },1000)
 }
 
@@ -78,6 +98,18 @@ function highscore(){
     localStorage.setItem("highscores",JSON.stringify(highscores))
 }
 
+function displayhighscores(){
+    let stringofhighs = localStorage.getItem("highscores")
+    let listofhighs = JSON.parse(stringofhighs)
+    console.log(listofhighs)
+    for (i=0;i<listofhighs.length;i++){
+        const ahighscoreinit = document.createElement("li")
+        const ahighscore = document.createElement("li")
+        ahighscoreinit.textContent = listofhighs[i][0]
+        ahighscore.textContent = listofhighs[i][1]
+        highscorespage.appendChild(ahighscoreinit)
+        highscorespage.appendChild(ahighscore)
+}}
 
 document.getElementById("start").onclick = function(){firstquestion()}
 

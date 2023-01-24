@@ -1,88 +1,60 @@
-# Module 6 Challenge Web APIs: Code Quiz
+# Coding-Quiz
 
-## Your Task
+## Description
 
-As you proceed in your journey to becoming a front-end web developer, it’s likely that you’ll be asked to complete a coding assessment, perhaps as part of an interview process. A typical coding assessment is a combination of multiple-choice questions and interactive coding challenges. 
+Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
 
-To help you become familiar with these tests and give you a chance to apply the skills from this module, this week’s challenge invites you to build a timed coding quiz with multiple-choice questions. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean, polished, and responsive user interface. This week’s coursework has taught you all the skills you need to succeed in this challenge.
+- The aim of the project was to make a quiz that was interactive and able to save users highscores
 
+The project specifically wanted the user to be able to select
 
-## User Story
+- A start button that when clicked the timer starts and the first question appears
+- Questions contain buttons for each answer
+- When answer is clicked, the next question appears
+- If the answer clicked was incorrect then subtract time from the clock
+- The quiz should end when all questions are answered or the timer reaches 0.
+- When the game ends, it should display their score and give the user the ability to save their initials and their score
 
-```
-AS A coding boot camp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
-```
+## Installation
 
-## Acceptance Criteria
-
-Create a code quiz that contains the following requirements:
-
-* A start button that when clicked a timer starts and the first question appears.
- 
-  * Questions contain buttons for each answer.
-  * 
-  * When answer is clicked, the next question appears
-  * 
-  * If the answer clicked was incorrect then subtract time from the clock
-
-* The quiz should end when all questions are answered or the timer reaches 0.
-
-  * When the game ends, it should display their score and give the user the ability to save their initials and their score
-  
-## Mock-Up
-
-The following animation demonstrates the application functionality:
-
-![Animation of code quiz. Presses button to start quiz. Clicks the button for the answer to each question, displays if answer was correct or incorrect. Quiz finishes and displays high scores. User adds their intials, then clears their intials and starts over.](./assets/08-web-apis-challenge-demo.gif)
-
-## Grading Requirements
-
-This challenge is graded based on the following criteria: 
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the above acceptance criteria.
-
-### Deployment: 32%
-
-* Application deployed at live URL.
-
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository that contains application code.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the challenge instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality README file with description, screenshot, and link to deployed application.
+Click the link to run the website
 
 
-## Review
 
-You are required to submit BOTH of the following for review:
+## Usage
 
-* The URL of the functional, deployed application.
+To play teh quiz the user clicks start quiz and then tries to answer the questions by clicking on them, then at the end of the questions the user can submit their score to a highscores tabel that is stored in local storage
 
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+![screenshot of the webpage with a password generated](images/Screenshot%202023-01-17%20at%2021.53.56.png)
+![screenshot of the webpage with the first alert asking character preferences](images/Screenshot%202023-01-17%20at%2021.55.59.png)
+![screenshot of the webpage with the first alert confirmation](images/Screenshot%202023-01-17%20at%2021.56.11.png)
+![screenshot of the webpage with the prompt asking for length of password](images/Screenshot%202023-01-17%20at%2021.56.27.png)
 
----
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+## License
+
+MIT License
+
+Copyright (c) [2023] [Joshua Alexander]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+## Tests
+
+Test the site by cliing on the start quiz button
