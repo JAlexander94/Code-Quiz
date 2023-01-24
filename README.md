@@ -19,16 +19,15 @@ The project specifically wanted the user to be able to select
 
 Click the link to run the website
 
-
+https://jalexander94.github.io/Code-Quiz/
 
 ## Usage
 
 To play teh quiz the user clicks start quiz and then tries to answer the questions by clicking on them, then at the end of the questions the user can submit their score to a highscores tabel that is stored in local storage
 
-![screenshot of the webpage with a password generated](images/Screenshot%202023-01-17%20at%2021.53.56.png)
-![screenshot of the webpage with the first alert asking character preferences](images/Screenshot%202023-01-17%20at%2021.55.59.png)
-![screenshot of the webpage with the first alert confirmation](images/Screenshot%202023-01-17%20at%2021.56.11.png)
-![screenshot of the webpage with the prompt asking for length of password](images/Screenshot%202023-01-17%20at%2021.56.27.png)
+![start screen]([images/Screenshot%202023-01-17%20at%2021.53.56.png](https://github.com/JAlexander94/Code-Quiz/blob/main/assets/images/Screenshot%202023-01-24%20at%2023.41.41.png))
+![screenshot of the first question]([images/Screenshot%202023-01-17%20at%2021.55.59.png](https://github.com/JAlexander94/Code-Quiz/blob/main/assets/images/Screenshot%202023-01-24%20at%2023.42.09.png))
+![screenshot of the submit highscore page]([images/Screenshot%202023-01-17%20at%2021.56.11.png](https://github.com/JAlexander94/Code-Quiz/blob/main/assets/images/Screenshot%202023-01-24%20at%2023.42.59.png))
 
 ## License
 
