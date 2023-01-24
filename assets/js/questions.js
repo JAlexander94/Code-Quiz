@@ -31,11 +31,13 @@ function firstquestion(){
     questions.addEventListener("click",function(event){
         const isButton = event.target.nodeName === "BUTTON"
         if(!isButton){return}
-        console.log(numquestions)
+        const answer = event.target.textContent
+        if(answer!==answersarr[(numquestions-1)]){secondsLeft=secondsLeft-10}
             if(numquestions === 5 ){
+                finalscore.textContent = secondsLeft
                 questions.setAttribute("class","hide")
                 endscreen.setAttribute("class","visible")
-            }else{            
+            }else{        
                 questiontitle.textContent = questionsarr[numquestions]
                 for (i=0;i<4;i++){
                 const button = document.getElementById(i)
