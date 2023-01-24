@@ -25,9 +25,9 @@ https://jalexander94.github.io/Code-Quiz/
 
 To play teh quiz the user clicks start quiz and then tries to answer the questions by clicking on them, then at the end of the questions the user can submit their score to a highscores tabel that is stored in local storage
 
-![start screen]([images/Screenshot%202023-01-17%20at%2021.53.56.png](https://github.com/JAlexander94/Code-Quiz/blob/main/assets/images/Screenshot%202023-01-24%20at%2023.41.41.png))
-![screenshot of the first question]([images/Screenshot%202023-01-17%20at%2021.55.59.png](https://github.com/JAlexander94/Code-Quiz/blob/main/assets/images/Screenshot%202023-01-24%20at%2023.42.09.png))
-![screenshot of the submit highscore page]([images/Screenshot%202023-01-17%20at%2021.56.11.png](https://github.com/JAlexander94/Code-Quiz/blob/main/assets/images/Screenshot%202023-01-24%20at%2023.42.59.png))
+![start screen](https://github.com/JAlexander94/Code-Quiz/blob/main/assets/images/Screenshot%202023-01-24%20at%2023.41.41.png)
+![screenshot of the first question](https://github.com/JAlexander94/Code-Quiz/blob/main/assets/images/Screenshot%202023-01-24%20at%2023.42.09.png)
+![screenshot of the submit highscore page](https://github.com/JAlexander94/Code-Quiz/blob/main/assets/images/Screenshot%202023-01-24%20at%2023.42.59.png)
 
 ## License
 
