@@ -3,31 +3,31 @@ let questionsarr = ["Commonly used data types do not include:","The condition in
 let answersarr = ["3. alerts","3. parentheses","4. all of the above","3. quotation marks","4. console log"]
 let allanswersarr = [["strings","booleans","alerts","numbers"],["quotes","curly brackets","parentheses","square brackets"],["numbers and strings","other arrays","booleans","all of the above"],["commas","curly brackets","quotation marks","parentheses"],["javascript","terminal/bash","for loops","console log"]]
 
+// define the elemenst to be used within the functions
 let startscreen = document.getElementById("start-screen")
 let questions = document.getElementById("questions")
 let endscreen = document.getElementById("end-screen")
 let questiontitle = document.getElementById("question-title")
 let choices = document.getElementById("choices")
 let finalscore = document.getElementById("final-score")
-let highscorespage= document.getElementById("high-scores")
+let highscorespage = document.getElementById("highscores")
 let time = document.getElementById("time")
+let start = document.getElementById("start")
 let initials
 
+//set the numbers and arrays
 var numquestions = 0
 var highscores = []
 
+//initialisation function to show the start screen and make sure no questions are showing
 function init(){
-    startscreen.setAttribute("class","start")
-    questions.setAttribute("class","hide")
-    endscreen.setAttribute("class","hide")
-    time.textContent = 0
-    numquestions = 0
     var buttons = document.querySelectorAll(".button")
     if(buttons){for (var i = 0;i<buttons.length;i++){buttons[i].remove()}}
+    start.addEventListener("click",function(event){firstquestion(event)})
     console.log(numquestions)
 }
 
-
+// function which provides the first question to answer and sets off the chain for new questions
 function firstquestion(){
     startscreen.setAttribute("class","hide")
     questions.setAttribute("class","visible")
@@ -45,7 +45,7 @@ function firstquestion(){
     questions.addEventListener("click",function(event){newquestion(event)})
 }
 
-
+// function for a new question and the high score add page if the questions are over
 function newquestion(event){
     event.stopPropagation()
     event.preventDefault()
@@ -58,6 +58,7 @@ function newquestion(event){
             questions.setAttribute("class","hide")
             endscreen.setAttribute("class","visible")
             time.textContent = secondsLeft
+            document.getElementById("submit").onclick = function(){highscore()}
             return
         }else{        
             questiontitle.textContent = questionsarr[numquestions]
@@ -70,7 +71,7 @@ function newquestion(event){
     console.log(numquestions)
 }
 
-
+// a function to set the timer when the first question shows
 function setTime(){
     var timerInterval = setInterval(function(){
         secondsLeft--
@@ -86,7 +87,7 @@ function setTime(){
     },1000)
 }
 
-
+//functiopn to set highscores when they are submitted
 function highscore(){
     const storedhighscores = JSON.parse(localStorage.getItem("highscores"))
     if(storedhighscores !== null){highscores=storedhighscores}
@@ -98,21 +99,5 @@ function highscore(){
     localStorage.setItem("highscores",JSON.stringify(highscores))
 }
 
-function displayhighscores(){
-    let stringofhighs = localStorage.getItem("highscores")
-    let listofhighs = JSON.parse(stringofhighs)
-    console.log(listofhighs)
-    for (i=0;i<listofhighs.length;i++){
-        const ahighscoreinit = document.createElement("li")
-        const ahighscore = document.createElement("li")
-        ahighscoreinit.textContent = listofhighs[i][0]
-        ahighscore.textContent = listofhighs[i][1]
-        highscorespage.appendChild(ahighscoreinit)
-        highscorespage.appendChild(ahighscore)
-}}
-
-displayhighscores()
-
-document.getElementById("start").onclick = function(){firstquestion()}
-
-document.getElementById("submit").onclick = function(){highscore()}
+//calling the initialistaion function
+init()

@@ -23,11 +23,13 @@ https://jalexander94.github.io/Code-Quiz/
 
 ## Usage
 
-To play teh quiz the user clicks start quiz and then tries to answer the questions by clicking on them, then at the end of the questions the user can submit their score to a highscores tabel that is stored in local storage
+To play the quiz the user clicks start quiz and then tries to answer the questions by clicking on them, then at the end of the questions the user can submit their score to a highscores table that is stored in local storage
+Click on the highscores button to see the highscores and then click clear to clear those highscores
 
 ![start screen](https://github.com/JAlexander94/Code-Quiz/blob/main/assets/images/Screenshot%202023-01-24%20at%2023.41.41.png)
 ![screenshot of the first question](https://github.com/JAlexander94/Code-Quiz/blob/main/assets/images/Screenshot%202023-01-24%20at%2023.42.09.png)
 ![screenshot of the submit highscore page](https://github.com/JAlexander94/Code-Quiz/blob/main/assets/images/Screenshot%202023-01-24%20at%2023.42.59.png)
+![screenshot of the highscore page](https://github.com/JAlexander94/Code-Quiz/blob/main/assets/images/Screenshot%202023-03-19%20at%2018.18.59.png)
 
 ## License
 
@@ -56,4 +58,4 @@ SOFTWARE.
 
 ## Tests
 
-Test the site by cliing on the start quiz button
+Test the site by clicking on the start quiz button
