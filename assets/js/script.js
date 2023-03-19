@@ -111,6 +111,8 @@ function displayhighscores(){
         highscorespage.appendChild(ahighscore)
 }}
 
+displayhighscores()
+
 document.getElementById("start").onclick = function(){firstquestion()}
 
 document.getElementById("submit").onclick = function(){highscore()}
